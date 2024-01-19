@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Результати голосування</title>
+    <th:block th:include="header.html"></th:block>
+</head>
+<body>
+
+<h1>Результати голосування</h1>
+
+<h2>Переміг: <span th:text="${winner}"></span></h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Кандидат</th>
+        <th>Кількість голосів</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${resultsList}">
+        <td th:text="${entry.key}"></td>
+        <td th:text="${entry.value}"></td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${error}" class="alert alert-danger" role="alert">
+    <strong>Помилка!</strong> <span th:text="${error}"></span>
+</div>
+<div th:replace="footer"></div>
+</body>
+</html>

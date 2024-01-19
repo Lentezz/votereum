@@ -1,0 +1,175 @@
+/* styles.css */
+
+/* Загальні стилі для всіх сторінок */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+h1, h2 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Стилі для Admin Panel */
+
+textarea, input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Стилі для Delegate Voting */
+#delegationAddress {
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-green {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+#contractAddress {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+a.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+    background-color: #0056b3;
+    color: #fff;
+}
+
+.deploy-button {
+    display: block;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.deploy-button:hover{
+    background-color: #004fab;
+}
+
+
+table {
+    width: 30%; /* Задайте ширину таблиці за потреби */
+    border-collapse: collapse; /* Злиття рамок */
+    margin: 0 auto; /* Центрування таблиці */
+    font-size: 1em; /* Розмір шрифту */
+    border: 1px solid #000000; /* Межі таблиці */
+    background-color: #ffffff;
+}
+
+/* Стилі для заголовка таблиці */
+thead {
+    background-color: #333333; /* Фоновий колір заголовка */
+    color: #dddddd;
+}
+
+/* Стилі для клітинок заголовка */
+th {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Стилі для клітинок тіла таблиці */
+td {
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; /* Межі між рядками */
+    height: 100px;
+}
+
+td, th {
+    text-align: center; /* Вирівнювання тексту по центру */
+}
+/* styles.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Забезпечення, що висота 100% */
+    min-height: 100vh; /* Мінімальна висота на всю висоту вікна перегляду */
+
+}
+
+.wrapper {
+    min-height: 100%; /* Мінімальна висота контейнера */
+    position: relative;
+}
+
+.content {
+    padding-bottom: 60px; /* Висота футера, забезпечує відсутність перекриття контентом */
+}
+
+
+
+
+
+

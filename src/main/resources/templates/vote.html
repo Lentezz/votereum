@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Голосування</title>
+    <link rel="stylesheet" href="/styles.css">
+    <th:block th:include="header.html"></th:block>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Задаємо стандартний шрифт */
+            background-color: #f4f4f4;      /* Задаємо колір фону */
+        }
+
+        form {
+            max-width: 500px;               /* Задаємо максимальну ширину форми */
+            margin: 50px auto;              /* Центруємо форму по горизонталі з верху відступом */
+            padding: 20px;                  /* Зовнішні відступи для форми */
+            background-color: #ffffff;      /* Колір фону форми */
+            border-radius: 8px;             /* Закруглені кути форми */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тінь форми */
+        }
+
+        label {
+            display: block;                 /* Кожен label на новому рядку */
+            margin-bottom: 8px;             /* Відступ знизу для кращого вигляду */
+        }
+
+        input[type="text"],
+        button {
+            width: 100%;                    /* Ширина відповідає контейнеру */
+            padding: 10px;                  /* Внутрішні відступи для текстових полів та кнопок */
+            margin-bottom: 20px;            /* Відступ знизу між елементами */
+            border: 1px solid #ccc;         /* Тонка межа для текстових полів та кнопок */
+            border-radius: 4px;             /* Закруглені кути для текстових полів та кнопок */
+        }
+
+        button {
+            background-color: #007bff;      /* Колір фону кнопки */
+            color: #fff;                    /* Колір тексту кнопки */
+            border: none;                   /* Видаляємо межу */
+            cursor: pointer;                /* Змінюємо курсор при наведенні */
+        }
+
+        button.btn-green:hover{
+            background-color: #248039;
+        }
+
+        button.btn-green {
+            background-color: #28a745;      /* Зелений колір для особливої кнопки */
+        }
+
+
+
+        a.btn {
+            display: inline-block;
+            width: 92%;      /* Посилання рядом із кнопкою */
+            padding: 10px 15px;             /* Внутрішні відступи */
+            text-decoration: none;          /* Видаляємо підкреслення */
+            color: #007bff;                 /* Колір тексту */
+            border: 1px solid #007bff;      /* Межа */
+            border-radius: 4px;             /* Закруглені кути */
+            transition: background-color 0.3s; /* Плавний перехід */
+        }
+
+        a.btn:hover {
+            background-color: #f0f0f0;      /* Колір фону при наведенні */
+        }
+    </style>
+</head>
+<body>
+
+<form action="/voter/connect" method="post">
+    <label for="privateKey">Приватний ключ:</label>
+    <input type="text" id="privateKey" name="privateKey" th:value="${privateKey}" required><br><br>
+
+    <label for="contractAddress">Адреса контракту:</label>
+    <input type="text" id="contractAddress" name="contractAddress" th:value="${contractAddress}" required><br><br>
+
+    <label for="gasPrice">Ціна газу:</label>
+    <input type="text" id="gasPrice" name="gasPrice" th:value="${gasPrice}" required><br><br>
+
+    <label for="gasLimit">Ліміт газу:</label>
+    <input type="text" id="gasLimit" name="gasLimit" th:value="${gasLimit}" required><br><br>
+
+    <button type="submit" class="btn btn-green" name="action" value="vote">Проголосувати</button>
+    <a href="/voter/delegate" class="btn">Делегувати голос</a>
+</form>
+
+<!-- Додайте ваші скрипти JavaScript тут, якщо потрібно -->
+
+<link rel="stylesheet" href="/styles.css">
+<div th:replace="footer"></div>
+</body>
+
+
+</html>

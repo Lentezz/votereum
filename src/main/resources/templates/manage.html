@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Election</title>
+    <link rel="stylesheet" href="/styles.css">
+    <th:block th:include="header.html"></th:block>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Задаємо стандартний шрифт */
+            background-color: #f4f4f4;      /* Задаємо колір фону */
+
+        }
+
+        form {
+            max-width: 500px;               /* Задаємо максимальну ширину форми */
+            margin: 50px auto;              /* Центруємо форму по горизонталі з верху відступом */
+            padding: 20px;                  /* Зовнішні відступи для форми */
+            background-color: #ffffff;      /* Колір фону форми */
+            border-radius: 8px;             /* Закруглені кути форми */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тінь форми */
+        }
+
+        label {
+            display: block;                 /* Кожен label на новому рядку */
+            margin-bottom: 8px;             /* Відступ знизу для кращого вигляду */
+        }
+
+
+        .auth, .end {
+            display: block;
+            margin: auto;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;             /* Закруглені кути для текстових полів та кнопок */
+        }
+
+        .form-container {
+            flex: 1; /* Займає всю доступну висоту, що залишилася після заголовка та форм */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<!-- Форма для авторизації виборців -->
+<form action="/manage-election/authorize-voter" method="post">
+    <h2>Authorize Voter</h2>
+    <label for="voterId">Voter ID:</label>
+    <input type="text" id="voterId" name="voterId" required>
+    <input type="submit" class="auth" value="Authorize">
+</form>
+
+<form>
+    <div>
+        <h2 for="contractAddress">Contract Address:</h2>
+        <!-- Текстове поле для виведення contractAddress -->
+        <input type="text" id="contractAddress" name="contractAddress" value="${contractAddress}" readonly>
+    </div>
+</form>
+<div class="form-container">
+<form action="/manage-election/end-election" method="get">
+    <h2>End Election</h2>
+    <input type="submit" class="end" value="End Election">
+</form>
+</div>
+
+<div th:replace="footer"></div>
+
+</body>
+</html>

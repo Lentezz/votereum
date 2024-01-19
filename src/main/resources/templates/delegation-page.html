@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Delegate Voting</title>
+    <link rel="stylesheet" href="/styles.css">
+    <th:block th:include="header.html"></th:block>
+</head>
+<body>
+
+<h2>Vote delegation</h2>
+
+<form action="/voter/delegation" method="post">
+    <label for="delegationAddress">Delegation Address:</label>
+    <input type="text" id="delegationAddress" name="delegationAddress" required><br><br>
+
+    <button type="submit">Delegate</button>
+</form>
+
+<!-- Тут можна додати додаткові елементи або скрипти, якщо потрібно -->
+<div th:replace="footer"></div>
+</body>
+</html>

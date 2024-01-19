@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="/styles.css">
+  <th:block th:include="header.html"></th:block>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif; /* Задаємо стандартний шрифт */
+      background-color: #f4f4f4;      /* Задаємо колір фону */
+    }
+
+    form {
+      max-width: 500px;               /* Задаємо максимальну ширину форми */
+      margin: 50px auto;              /* Центруємо форму по горизонталі з верху відступом */
+      padding: 20px;                  /* Зовнішні відступи для форми */
+      background-color: #ffffff;      /* Колір фону форми */
+      border-radius: 8px;             /* Закруглені кути форми */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Тінь форми */
+    }
+
+    label {
+      display: block;                 /* Кожен label на новому рядку */
+      margin-bottom: 8px;             /* Відступ знизу для кращого вигляду */
+    }
+
+    input[type="text"],
+    button {
+      width: 100%;                    /* Ширина відповідає контейнеру */
+      padding: 10px;                  /* Внутрішні відступи для текстових полів та кнопок */
+      margin-bottom: 20px;            /* Відступ знизу між елементами */
+      border: 1px solid #ccc;         /* Тонка межа для текстових полів та кнопок */
+      border-radius: 4px;             /* Закруглені кути для текстових полів та кнопок */
+    }
+
+
+
+    a.deploy-button:hover{
+      background-color: #248039;
+    }
+
+    a.deploy-button {
+      background-color: #28a745;      /* Зелений колір для особливої кнопки */
+    }
+
+
+  </style>
+</head>
+<body>
+
+<form action="/admin/deploy" method="post">
+  <label for="candidates">Candidates (separated by ',')</label>
+  <textarea id="candidates" name="candidatesInput" th:value="${candidates}"></textarea><br>
+
+  <label for="privateKey">Private Key</label>
+  <input type="text" id="privateKey" name="privateKey"><br>
+
+  <label for="gasPrice">Gas Price</label>
+  <input type="text" id="gasPrice" name="gasPrice"><br>
+
+  <label for="gasLimit">Gas Limit</label>
+  <input type="text" id="gasLimit" name="gasLimit"><br>
+
+  <input type="submit" class ="deploy-button" value="Deploy">
+</form>
+
+<div th:replace="footer"></div>
+
+</body>
+</html>

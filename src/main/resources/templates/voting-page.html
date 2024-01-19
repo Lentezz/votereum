@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Voting Page</title>
+    <th:block th:include="header.html"></th:block>
+    <style>
+        /* styles.css */
+
+        /* Стилі для заголовка */
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            color: #333; /* Змінено колір тексту для кращої видимості */
+        }
+
+        /* Стилі для таблиці */
+        table {
+            width: 30%; /* Задайте ширину таблиці за потреби */
+            border-collapse: collapse; /* Злиття рамок */
+            margin: 0 auto; /* Центрування таблиці */
+            font-size: 1em; /* Розмір шрифту */
+            border: 1px solid #000000; /* Межі таблиці */
+            background-color: #ffffff;
+        }
+
+        /* Стилі для заголовка таблиці */
+        thead {
+            background-color: #333333; /* Фоновий колір заголовка */
+            color: #dddddd;
+        }
+
+        /* Стилі для клітинок заголовка */
+        th {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        /* Стилі для клітинок тіла таблиці */
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #ddd; /* Межі між рядками */
+            height: 100px;
+        }
+
+        td, th {
+            text-align: center; /* Вирівнювання тексту по центру */
+        }
+
+
+
+        /* Стилі для кнопки "Vote" */
+        button {
+            padding: 8px 12px;
+            background-color: #007bff; /* Колір кнопки */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Плавний перехід для кольору фону */
+        }
+
+        /* Змінений стиль кнопки при наведенні */
+        button:hover {
+            background-color: #00e8ff;
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>List of Candidates</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Candidate Name</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="candidate, index : ${candidates}">
+        <td th:text="${candidate}"></td>
+        <td>
+            <!-- Змінив action на /vote і додав input для передачі proposalIndex -->
+            <form action="/voter/vote" method="post">
+                <!-- Приховане поле для передачі індексу кандидата -->
+                <input type="hidden" name="proposalIndex" th:value="${index.index}" />
+                <button type="submit">Vote</button>
+            </form>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div th:replace="footer"></div>
+</body>
+</html>

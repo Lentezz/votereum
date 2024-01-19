@@ -1,0 +1,17 @@
+Downloading https://services.gradle.org/distributions/gradle-7.6-bin.zip
+....................................................................................................................
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Task 'generateContractWrappers' not found in root project 'Web3App'.
+
+* Try:
+> Run gradlew tasks to get a list of available tasks.
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 35s
